@@ -2,6 +2,8 @@
 :root {
     --main-color: #10cab7;
     --secondry-color: #2c4755;
+    --section-background: var(--section-background);
+    --section-padding: 60px;
 }
 /* End Varibales */
 
@@ -49,12 +51,12 @@ body {
 
 /* Start Components */
 .special-heading {
-    color: #ebeced;
+    color: #d3d5d6;
     font-size: 100px;
     text-align: center;
     font-weight: 800;
     letter-spacing: -3px;
-    margin: 0;
+    margin: 0 0 20px;
 }
 
 .special-heading + p {
@@ -62,6 +64,7 @@ body {
     font-size: 20px;
     text-align: center;
     color: #797979;
+    z-index: -1;
 }
 
 @media (max-width: 768px) {
@@ -121,7 +124,7 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    background-color: #f6f6f6;
+    background-color: var(--section-background);
     position: absolute;
     right: 0;
     min-width: 200px;
@@ -134,7 +137,7 @@ body {
     content: '';
     border-width: 10px;
     border-style: solid;
-    border-color: transparent transparent #f6f6f6 transparent;
+    border-color: transparent transparent var(--section-background) transparent;
     position: absolute;
     right: 5px;
     top: -20px;
@@ -173,7 +176,6 @@ body {
 
 .landing .intro-text {
     text-align: center;
-    width: 320px;
     max-width: 100%;
 }
 
@@ -192,9 +194,9 @@ body {
 
 /* Start Featuers */
 .features {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    background-color: #f6f6f6;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
 }
 
 .features .container {
@@ -226,8 +228,8 @@ body {
 
 /* Start Services */
 .services {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
 }
 
 .services .services-content {
@@ -295,3 +297,46 @@ body {
     }
 }
 /* End Serivces */
+
+/* Start Portfolio */
+.portfolio {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
+}
+
+.portfolio .portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 80px;
+}
+
+.portfolio .portfolio-content .card {
+    background-color: white;
+}
+
+.portfolio .portfolio-content .card img {
+    max-width: 100%;
+}
+
+.portfolio .portfolio-content .card .info {
+    padding: 20px;
+}
+
+.portfolio .portfolio-content .card .info h3 {
+    margin: 0;
+}
+
+.portfolio .portfolio-content .card .info p {
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .portfolio .portfolio-content .card .info {
+        text-align: center;
+    }
+}
+/* End Portfolio */
