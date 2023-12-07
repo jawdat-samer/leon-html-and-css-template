@@ -474,3 +474,19 @@ body {
     }
 }
 /* End Contact */
+
+/* Start Footer */
+.footer {
+    background-color: var(--secondry-color);
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.footer span {
+    font-weight: bold;
+    color: var(--main-color);
+}
+/* End Footer */
