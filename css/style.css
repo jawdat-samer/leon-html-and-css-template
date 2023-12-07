@@ -1,6 +1,7 @@
 /* Start Variables */
 :root {
     --main-color: #10cab7;
+    --secondry-color: #2c4755;
 }
 /* End Varibales */
 
@@ -45,6 +46,34 @@ body {
     }
 }
 /* End Global Rules */
+
+/* Start Components */
+.special-heading {
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+
+.special-heading + p {
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+
+@media (max-width: 768px) {
+    .special-heading {
+        font-size: 60px;
+    }
+
+    .special-heading + p {
+        margin-top: -20px;
+    }
+}
+/* End Components */
 
 /* Start Header */
 .header {
@@ -144,7 +173,7 @@ body {
 
 .landing .intro-text {
     text-align: center;
-    /* width: 320px; */
+    width: 320px;
     max-width: 100%;
 }
 
@@ -190,7 +219,79 @@ body {
 
 .features .feat p {
     line-height: 1.8;
-    color: #666;
+    color: #777;
     font-size: 17px;
 }
 /* End Features */
+
+/* Start Services */
+.services {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.services .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 100px;
+}
+
+.services .services-content .serv {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .services .services-content .serv {
+        flex-flow: column;
+        text-align: center;
+    }
+}
+
+.services .services-content .serv i {
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+
+.services .services-content .serv .text {
+    flex: 1;
+}
+
+.services .services-content .serv .text h3 {
+    margin: 0 0 20px;
+}
+
+.services .services-content .serv .text p {
+    color: #777;
+    line-height: 1.6;
+}
+
+.services .services-content .image {
+    position: relative;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.services .services-content .image::before {
+    content: '';
+    background-color: var(--secondry-color);
+    width: 160px;
+    height: calc(100% + 70px);
+    position: absolute;
+    top: -40px;
+    right: 0;
+    z-index: -1;
+}
+
+.services .services-content .image img {
+    width: 260px;
+}
+
+@media (max-width: 1199px) {
+    .image-sm {
+        display: none;
+    }
+}
+/* End Serivces */
